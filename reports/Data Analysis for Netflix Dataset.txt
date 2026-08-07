@@ -1,0 +1,8 @@
+Data Analysis for Netflix Dataset:
+
+The issues involved with the dataset are that for the columns, (director, cast, and country), they've had more missing values by a large amount than any of the other columns. There were no duplicated rows, and there weren't many data issues that needed to be resolved. This makes sense, because I grabbed this dataset from Kaggle.
+
+I created two graphs to help understand the structure of this data. One of them shows the difference between movies and tv shows, which helps in deciding where to cluster the data. The other shows where the top ten most countries that provided the most media for Netflix are.
+
+Almost all of this data was categorical, so it was hard to decide if I needed to calculate Descriptive Statistics and create new features.
+
