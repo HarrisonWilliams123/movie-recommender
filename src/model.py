@@ -67,7 +67,7 @@ preprocessor = ColumnTransformer(
 #Builds the KMeans pipeline
 kmeans_model = Pipeline(steps=[
     ("preprocess", preprocessor),
-    ("cluster", KMeans(n_clusters=5, random_state=42))
+    ("cluster", KMeans(n_clusters=14, random_state=42))
 ])
 
 #Fit the model
