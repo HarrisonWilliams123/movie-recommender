@@ -83,6 +83,8 @@ X_processed = kmeans_model["preprocess"].transform(df)
 sil_score = silhouette_score(X_processed, df["cluster"])
 print("Silhouette Score:", sil_score)
 
+print(df["cluster"].value_counts())
+
 #Saves the clusters to a csv file
 df.to_csv("data/model_predictions2.csv", index=False)
 
