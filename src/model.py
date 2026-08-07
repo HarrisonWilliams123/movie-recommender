@@ -43,7 +43,7 @@ for genre in top_genres:
 
 #Select final features
 categorical_cols = ["type", "country", "rating"]
-numeric_cols = ["release_year", "duration_clean", "added_year", "added_month"] + [f"genre{g}" for g in top_genres]
+numeric_cols = ["release_year", "duration_clean", "added_year", "added_month"] + [f"genre_{g}" for g in top_genres]
 
 #Build transformers
 categorical_transformer = Pipeline(steps=[
@@ -67,7 +67,7 @@ preprocessor = ColumnTransformer(
 #Builds the KMeans pipeline
 kmeans_model = Pipeline(steps=[
     ("preprocess", preprocessor),
-    ("cluster", KMeans(n_clusters=4, random_state=42))
+    ("cluster", KMeans(n_clusters=5, random_state=42))
 ])
 
 #Fit the model
@@ -84,5 +84,5 @@ sil_score = silhouette_score(X_processed, df["cluster"])
 print("Silhouette Score:", sil_score)
 
 #Saves the clusters to a csv file
-df.to_csv("data/model_predictions.csv", index=False)
+df.to_csv("data/model_predictions2.csv", index=False)
 
